@@ -11801,7 +11801,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import libraries</span>
@@ -11853,12 +11853,10 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="n">student_data</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-
-<span class="c1"># TODO: Calculate number of students</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Calculate number of students</span>
 <span class="n">n_students</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">student_data</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
 
 <span class="c1"># TODO: Calculate number of features</span>
@@ -11891,8 +11889,7 @@ div#notebook {
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>school
-Total number of students: 395
+<pre>Total number of students: 395
 Number of features: 30
 Number of students who passed: 265
 Number of students who failed: 130
@@ -11919,7 +11916,7 @@ Graduation rate of the class: 67.09%
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Extract feature columns</span>
@@ -12001,7 +11998,7 @@ Feature values:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">preprocess_features</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
@@ -12072,7 +12069,7 @@ Feature values:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import any additional functionality you may need here</span>
@@ -12164,11 +12161,12 @@ Testing set has 95 samples.
 <p>Strengths: Logistic regression is one of the oldest and most widely-used algorithms, so it's widely understood and well supported. It easily gives probabilities in addition to strict binary classification. It also makes fewer assumptions about distribution of data than other algorithms, so it's more robust to irregular data.</p>
 <p>Weaknesses: Logistic Regression typically requires more data points than other algorithms to converge to stable, meaningful results.</p>
 <p>Justification: Logistic Regression is very good at giving probabilities of certain students dropping out, which is also very useful in deciding who needs extra help.</p>
-<p><em>Gaussian Naive Bayes:</em></p>
+<p><em>Multnomial Naive Bayes:</em></p>
 <p>Real world application: Naive Bayes classifiers are often used in <a href="https://en.wikipedia.org/wiki/Naive_Bayes_spam_filtering">email spam filtering</a>.</p>
 <p>Strengths: Naive Bayes is simple and easy to implement, with few parameters to adjust. It's also fast to train and predict, and has been shown to be successful in many different applications.</p>
 <p>Weakness: Naive Bayes assumes that there are no interrelationships between features (meaning that they're all statistically independent), so results can be skewed if there's a high correlation between some features (however, in practice this doesn't matter too much).</p>
 <p>Justification for using it: Naive Bayes has a good empirical success rate with binary classification problems, and given its simplicity, ease of use, and efficiency, it's worth trying.</p>
+<p>Also, since this problem mostly involves discrete, non-binary features, Multinomial Naive Bayes is preferable to Gaussian or Bernoulli Naive Bayes classifiers.</p>
 
 </div>
 </div>
@@ -12193,7 +12191,7 @@ Testing set has 95 samples.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">train_classifier</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">):</span>
@@ -12266,18 +12264,18 @@ Testing set has 95 samples.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import the three supervised learning models from sklearn</span>
 <span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span>
 <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegressionCV</span>
-<span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
+<span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">MultinomialNB</span>
 
 <span class="c1"># TODO: Initialize the three models</span>
 <span class="n">clf_A</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
 <span class="n">clf_B</span> <span class="o">=</span> <span class="n">LogisticRegressionCV</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
-<span class="n">clf_C</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
+<span class="n">clf_C</span> <span class="o">=</span> <span class="n">MultinomialNB</span><span class="p">()</span>
 
 <span class="c1"># TODO: Set up the training set sizes</span>
 <span class="n">X_train_100</span> <span class="o">=</span> <span class="n">X_train</span><span class="p">[:</span><span class="mi">100</span><span class="p">]</span>
@@ -12307,67 +12305,67 @@ Testing set has 95 samples.
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Training a SVC using a training set size of 100. . .
-Trained model in 0.0013 seconds
-Made predictions in 0.0006 seconds.
+Trained model in 0.0046 seconds
+Made predictions in 0.0009 seconds.
 F1 score for training set: 0.8777.
-Made predictions in 0.0005 seconds.
+Made predictions in 0.0008 seconds.
 F1 score for test set: 0.7746.
 
 Training a SVC using a training set size of 200. . .
-Trained model in 0.0022 seconds
-Made predictions in 0.0019 seconds.
+Trained model in 0.0025 seconds
+Made predictions in 0.0018 seconds.
 F1 score for training set: 0.8679.
-Made predictions in 0.0012 seconds.
+Made predictions in 0.0017 seconds.
 F1 score for test set: 0.7815.
 
 Training a SVC using a training set size of 300. . .
-Trained model in 0.0049 seconds
-Made predictions in 0.0035 seconds.
+Trained model in 0.0053 seconds
+Made predictions in 0.0034 seconds.
 F1 score for training set: 0.8761.
-Made predictions in 0.0013 seconds.
+Made predictions in 0.0014 seconds.
 F1 score for test set: 0.7838.
 
 Training a LogisticRegressionCV using a training set size of 100. . .
-Trained model in 0.2359 seconds
+Trained model in 0.4773 seconds
 Made predictions in 0.0003 seconds.
 F1 score for training set: 0.8108.
 Made predictions in 0.0001 seconds.
 F1 score for test set: 0.7552.
 
 Training a LogisticRegressionCV using a training set size of 200. . .
-Trained model in 0.2615 seconds
-Made predictions in 0.0003 seconds.
+Trained model in 0.4715 seconds
+Made predictions in 0.0004 seconds.
 F1 score for training set: 0.8428.
-Made predictions in 0.0001 seconds.
+Made predictions in 0.0003 seconds.
 F1 score for test set: 0.7671.
 
 Training a LogisticRegressionCV using a training set size of 300. . .
-Trained model in 0.2534 seconds
+Trained model in 0.3225 seconds
 Made predictions in 0.0003 seconds.
 F1 score for training set: 0.8401.
-Made predictions in 0.0001 seconds.
+Made predictions in 0.0002 seconds.
 F1 score for test set: 0.7943.
 
-Training a GaussianNB using a training set size of 100. . .
-Trained model in 0.0005 seconds
-Made predictions in 0.0002 seconds.
-F1 score for training set: 0.8467.
-Made predictions in 0.0002 seconds.
-F1 score for test set: 0.8029.
-
-Training a GaussianNB using a training set size of 200. . .
-Trained model in 0.0005 seconds
-Made predictions in 0.0002 seconds.
-F1 score for training set: 0.8406.
-Made predictions in 0.0002 seconds.
-F1 score for test set: 0.7244.
-
-Training a GaussianNB using a training set size of 300. . .
-Trained model in 0.0006 seconds
+Training a MultinomialNB using a training set size of 100. . .
+Trained model in 0.0300 seconds
 Made predictions in 0.0003 seconds.
-F1 score for training set: 0.8038.
+F1 score for training set: 0.8000.
 Made predictions in 0.0002 seconds.
-F1 score for test set: 0.7634.
+F1 score for test set: 0.7538.
+
+Training a MultinomialNB using a training set size of 200. . .
+Trained model in 0.0068 seconds
+Made predictions in 0.0003 seconds.
+F1 score for training set: 0.8057.
+Made predictions in 0.0003 seconds.
+F1 score for test set: 0.7941.
+
+Training a MultinomialNB using a training set size of 300. . .
+Trained model in 0.0014 seconds
+Made predictions in 0.0002 seconds.
+F1 score for training set: 0.7954.
+Made predictions in 0.0002 seconds.
+F1 score for test set: 0.7941.
 
 </pre>
 </div>
@@ -12460,7 +12458,7 @@ F1 score for test set: 0.7634.
 </tr>
 </tbody>
 </table>
-<p><strong> Classifer 3 - GaussianNB</strong></p>
+<p><strong> Classifer 3 - MultinomialNB</strong></p>
 <table>
 <thead><tr>
 <th style="text-align:center">Training Set Size</th>
@@ -12473,24 +12471,24 @@ F1 score for test set: 0.7634.
 <tbody>
 <tr>
 <td style="text-align:center">100</td>
-<td style="text-align:center">0.0005</td>
-<td style="text-align:center">0.0002</td>
-<td style="text-align:center">0.8467</td>
-<td style="text-align:center">0.8029</td>
+<td style="text-align:center">0.0300</td>
+<td style="text-align:center">0.0003</td>
+<td style="text-align:center">0.8000</td>
+<td style="text-align:center">0.7538</td>
 </tr>
 <tr>
 <td style="text-align:center">200</td>
-<td style="text-align:center">0.0005</td>
-<td style="text-align:center">0.0002</td>
-<td style="text-align:center">0.8406</td>
-<td style="text-align:center">0.7244</td>
+<td style="text-align:center">0.0068</td>
+<td style="text-align:center">0.0003</td>
+<td style="text-align:center">0.8057</td>
+<td style="text-align:center">0.7941</td>
 </tr>
 <tr>
 <td style="text-align:center">300</td>
-<td style="text-align:center">0.0006</td>
-<td style="text-align:center">0.0003</td>
-<td style="text-align:center">0.8038</td>
-<td style="text-align:center">0.7634</td>
+<td style="text-align:center">0.0014</td>
+<td style="text-align:center">0.0002</td>
+<td style="text-align:center">0.7954</td>
+<td style="text-align:center">0.7941</td>
 </tr>
 </tbody>
 </table>
@@ -12579,7 +12577,7 @@ F1 score for test set: 0.7634.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import &#39;GridSearchCV&#39; and &#39;make_scorer&#39;</span>
@@ -12622,7 +12620,7 @@ F1 score for test set: 0.7634.
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Made predictions in 0.0028 seconds.
+<pre>Made predictions in 0.0031 seconds.
 Tuned model has a training F1 score of 0.8323.
 Made predictions in 0.0011 seconds.
 Tuned model has a testing F1 score of 0.7945.
